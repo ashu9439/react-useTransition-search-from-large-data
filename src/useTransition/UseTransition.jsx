@@ -33,18 +33,19 @@ const UseTransition = () => {
   };
 
   return (
-    <div id="app">
+    <div id="app1">
       <h1>React18 -with useTransition</h1>
       <input
         type="text"
         placeholder=" 🔍 search"
         onChange={updateFilterHandler}
       />
-      <p>
-        {/* NOTE: 状態（ステート）の更新を遅らせている間は、「isPending = true」となる。 */}
-        {isPending && <span style={{ color: "white" }}>Loading</span>}
-      </p>
-      <ProductList products={filteredProducts} />
+      <div>
+        {isPending 
+         ? "Loading"
+         :<ProductList products={filteredProducts} />
+        }
+      </div>
     </div>
   );
 };
